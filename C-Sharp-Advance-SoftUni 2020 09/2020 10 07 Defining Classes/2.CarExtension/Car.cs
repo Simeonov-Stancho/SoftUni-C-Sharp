@@ -32,23 +32,23 @@ namespace CarManufacturer
 
         public double FuelQuantity
         {
-            get { return fuelQuantity; }
-            set { fuelQuantity = value; }
+            get { return this.fuelQuantity; }
+            set { this.fuelQuantity = value; }
         }
 
         public double FuelConsumption
         {
-            get { return fuelConsumption; }
-            set { fuelConsumption = value; }
+            get { return this.fuelConsumption; }
+            set { this.fuelConsumption = value; }
         }
 
         public void Drive(double distance)
         {
             double consumption = this.FuelQuantity - distance * this.FuelConsumption;
-            if (consumption > 0)
+            if (consumption >= 0)
             {
                 this.FuelQuantity -= consumption;
-            }
+            } 
 
             else
             {
@@ -58,7 +58,6 @@ namespace CarManufacturer
 
         public string WhoAmI()
         {
-            
             return $"Make: {this.Make}\nModel: {this.Model}\nYear: {this.Year}\nFuel: {this.FuelQuantity:F2}L";
         }
     }
