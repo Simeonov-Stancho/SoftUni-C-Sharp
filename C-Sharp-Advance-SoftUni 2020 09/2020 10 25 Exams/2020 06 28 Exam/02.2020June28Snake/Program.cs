@@ -170,7 +170,7 @@ namespace _02._2020June28Snake
 
         static void PrintGotOut()
         {
-            Console.WriteLine("Game over");
+            Console.WriteLine("Game over!");
         }
 
         static void PrintMatrix(char[,] matrix)
