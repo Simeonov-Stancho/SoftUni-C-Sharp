@@ -37,24 +37,24 @@ namespace Heroes
 
         public Hero GetHeroWithHighestStrength()
         {
-            Hero heroWithHighestStrength = this.data.OrderByDescending(h => h.Item.Strength)
-                            .First();
+            Hero heroWithHighestStrength = this.data.OrderBy(h => h.Item.Strength)
+                            .Last();
 
             return heroWithHighestStrength;
         }
 
         public Hero GetHeroWithHighestAbility()
         {
-            Hero heroWithHighestAbility = this.data.OrderByDescending(h => h.Item.Ability)
-                            .First();
+            Hero heroWithHighestAbility = this.data.OrderBy(h => h.Item.Ability)
+                            .Last();
 
             return heroWithHighestAbility;
         }
 
         public Hero GetHeroWithHighestIntelligence()
         {
-            Hero heroWithHighestIntelligence = this.data.OrderByDescending(h => h.Item.Intelligence)
-                            .First();
+            Hero heroWithHighestIntelligence = this.data.OrderBy(h => h.Item.Intelligence)
+                            .Last();
 
             return heroWithHighestIntelligence;
         }
