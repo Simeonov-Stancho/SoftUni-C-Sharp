@@ -85,21 +85,12 @@ namespace _02.Garden
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                if (i == row)
+                if (i == row || i == col)
                 {
                     continue;
                 }
 
                 matrix[i, col]++;
-            }
-
-            for (int i = 0; i < matrix.GetLength(1); i++)
-            {
-                if (i == col)
-                {
-                    continue;
-                }
-
                 matrix[row, i]++;
             }
         }
