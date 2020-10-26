@@ -19,10 +19,7 @@ namespace ClassroomProject
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Student: First Name = {this.FirstName}, Last Name = {this.LastName}, Subject = {this.Subject}");
-            string studentInfo = sb.ToString().Trim();
-            return studentInfo;
+            return $"Student: First Name = {this.FirstName}, Last Name = {this.LastName}, Subject = {this.Subject}";
         }
     }
 }
