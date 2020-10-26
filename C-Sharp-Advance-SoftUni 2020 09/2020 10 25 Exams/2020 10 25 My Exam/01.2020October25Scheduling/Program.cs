@@ -22,9 +22,15 @@ namespace _01.Scheduling
             Stack<int> tasks = new Stack<int>(tasksArray);
             Queue<int> threads = new Queue<int>(threadsArray);
 
-            while (taskValue != tasks.Peek() || threads.Count == 0)
+            while (taskValue != tasks.Peek() && threads.Count != 0)
             {
-                if (threads.Peek() >= tasks.Peek())
+                if (threads.Peek() == tasks.Peek())
+                {
+                    Console.WriteLine($"Thread with value {threads.Peek()} killed task {taskValue}");
+                    break;
+                }
+
+                if (threads.Peek() > tasks.Peek())
                 {
                     threads.Dequeue();
                     tasks.Pop();
@@ -36,7 +42,7 @@ namespace _01.Scheduling
                 }
             }
 
-            Console.WriteLine($"Thread with value {threads.Peek()} killed task {taskValue}");
+            
 
             Console.WriteLine(string.Join(" ", threads));
         }
