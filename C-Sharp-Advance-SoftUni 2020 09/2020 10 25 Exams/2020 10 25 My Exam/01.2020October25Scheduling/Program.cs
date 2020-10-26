@@ -22,7 +22,7 @@ namespace _01.Scheduling
             Stack<int> tasks = new Stack<int>(tasksArray);
             Queue<int> threads = new Queue<int>(threadsArray);
 
-            while (taskValue != tasks.Peek() && threads.Count != 0)
+            while (tasks.Count != 0 && threads.Count != 0)
             {
                 if (threads.Peek() == tasks.Peek())
                 {
@@ -30,7 +30,7 @@ namespace _01.Scheduling
                     break;
                 }
 
-                if (threads.Peek() > tasks.Peek())
+                if (threads.Peek() >= tasks.Peek())
                 {
                     threads.Dequeue();
                     tasks.Pop();
@@ -41,8 +41,6 @@ namespace _01.Scheduling
                     threads.Dequeue();
                 }
             }
-
-            
 
             Console.WriteLine(string.Join(" ", threads));
         }
