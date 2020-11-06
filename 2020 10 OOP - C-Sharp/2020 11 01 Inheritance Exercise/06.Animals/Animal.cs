@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Animals
 {
-    public class Animal
+    public abstract class Animal
     {
         public Animal(string name, int age, string gender)
         {
@@ -13,11 +13,8 @@ namespace Animals
             this.Gender = gender;
         }
 
-        public virtual string ProduceSound()
-        {
-            return "NoSuchSound";
-        }
-
+        public abstract string ProduceSound();
+        
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
