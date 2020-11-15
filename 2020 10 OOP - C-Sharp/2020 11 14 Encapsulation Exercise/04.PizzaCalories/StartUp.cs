@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace ShoppingSpree
+using PizzaCalories.Core;
+
+namespace PizzaCalories
 {
     public class StartUp
     {

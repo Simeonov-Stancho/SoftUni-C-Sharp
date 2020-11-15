@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ShoppingSpree
 {
     public class Person
     {
+        private const string NOT_ENOUGHT_MONEY_MSG = "{0} can't afford {1}";
+        private const string ENOUGHT_MONEY_MSG = "{0} bought {1}";
+
         private string name;
         private decimal money;
-        private List<Product> bagOfProducts; //list.....
+        private readonly ICollection<Product> bagOfProducts;
 
-        public Person(string name, decimal money)
+        private Person()
+        {
+            this.bagOfProducts = new List<Product>();
+        }
+
+        public Person(string name, decimal money) : this()
         {
             this.Name = name;
             this.Money = money;
-            //this.BagOfProducts = new List<Product>();
         }
 
         public string Name
@@ -23,9 +29,9 @@ namespace ShoppingSpree
 
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Name cannot be empty");
+                    throw new ArgumentException(GlobalConstants.EMPTY_NAME_EXC_MSG);
                 }
 
                 this.name = value;
@@ -36,20 +42,45 @@ namespace ShoppingSpree
         {
             get { return this.money; }
 
-            private set
+            set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Money cannot be negative");
+                    throw new ArgumentException(GlobalConstants.NEGATIVE_PRICE_EXC_MSG);
                 }
 
                 this.money = value;
             }
         }
 
-        public IReadOnlyCollection<Product> BagOfProducts 
+        private IReadOnlyCollection<Product> BagOfProducts
         {
-            get { return this.bagOfProducts.AsReadOnly(); } 
+            get { return (IReadOnlyCollection<Product>)this.bagOfProducts; }
+        }
+
+        public string BuyProduct(Product product)
+        {
+            if (this.Money >= product.Cost)
+            {
+                this.Money -= product.Cost;
+                this.bagOfProducts.Add(product);
+                return String.Format(ENOUGHT_MONEY_MSG, this.Name, product.Name);
+            }
+
+            else
+            {
+                return String.Format(NOT_ENOUGHT_MONEY_MSG, this.Name, product.Name);
+            }
+        }
+
+        public override string ToString()
+        {
+            if (bagOfProducts.Count == 0)
+            {
+                return $"{this.Name} - Nothing bought";
+            }
+
+            return $"{this.Name} - {string.Join(", ", this.bagOfProducts)}";
         }
     }
 }
