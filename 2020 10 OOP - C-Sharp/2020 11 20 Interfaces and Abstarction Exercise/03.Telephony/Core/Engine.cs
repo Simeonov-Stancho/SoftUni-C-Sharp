@@ -63,12 +63,10 @@ namespace _03.Telephony.Core
                 try
                 {
                     Console.WriteLine(this.smartPhone.Brawse(site));
-
                 }
 
                 catch (InvalidURLException exc)
                 {
-
                     Console.WriteLine(exc.Message);
                 }
             }
