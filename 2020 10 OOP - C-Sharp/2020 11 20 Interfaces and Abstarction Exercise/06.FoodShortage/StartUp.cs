@@ -1,6 +1,4 @@
-﻿using System;
-
-using _06.FoodShortage.Core;
+﻿using _06.FoodShortage.Core;
 
 namespace _06.FoodShortage
 {

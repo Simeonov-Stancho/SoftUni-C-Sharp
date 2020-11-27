@@ -1,15 +1,11 @@
 ﻿using _06.FoodShortage.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _06.FoodShortage.Models
 {
     public class Citizen : IBuyer
-
     {
         private const int FOOD_INCREASER = 10;
-        
+
         public Citizen(string name, int age, string id, string birthdate)
         {
             this.Name = name;
