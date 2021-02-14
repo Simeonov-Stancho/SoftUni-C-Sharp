@@ -1,3 +1,3 @@
-SELECT Id, Message, RepositoryId, ContributorId
+SELECT Id, [Message], RepositoryId, ContributorId
 	FROM Commits
-	ORDER BY Id, Message, RepositoryId, ContributorId
+	ORDER BY Id, [Message], RepositoryId, ContributorId

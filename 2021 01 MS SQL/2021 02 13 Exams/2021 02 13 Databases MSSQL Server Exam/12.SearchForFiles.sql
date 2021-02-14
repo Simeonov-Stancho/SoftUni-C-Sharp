@@ -10,6 +10,4 @@ AS
 
 EXEC usp_SearchForFiles 'txt'
 
-SELECT Id, [Name], (CONVERT(NVARCHAR(30), f.Size)+'KB') AS Size 
-	FROM Files AS f
-	WHERE  SUBSTRING(f.Name, CHARINDEX('.', f.Name)+1, LEN(f.Name)) = 'txt'
+--WHERE  SUBSTRING(f.Name, CHARINDEX('.', f.Name)+1, LEN(f.Name)) = 'txt'
