@@ -14,7 +14,7 @@ namespace P01_StudentSystem.Data
         }
 
         public StudentSystemContext(DbContextOptions options)
-            : base(options)
+            :base(options)
         {
 
         }
@@ -29,14 +29,12 @@ namespace P01_StudentSystem.Data
 
         public DbSet<StudentCourse> StudentCourses { get; set; }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=StudentSystem;Integrated Security = true") ;
+                optionsBuilder.UseSqlServer("Server=.;Database=StudentSystem;Integrated Security=true");
             }
-
             base.OnConfiguring(optionsBuilder);
         }
 

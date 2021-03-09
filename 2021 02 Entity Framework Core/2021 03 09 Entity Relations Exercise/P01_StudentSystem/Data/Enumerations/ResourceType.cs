@@ -1,10 +1,14 @@
-﻿namespace P01_StudentSystem.Data.Enumerations
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace P01_StudentSystem.Data.Enumerations
 {
     public enum ResourceType
     {
-        Video = 1,
-        Presentation = 2, 
-        Document = 3, 
-        Other = 4
+        Video = 0,
+        Presentation = 1,
+        Document = 2,
+        Other = 3
     }
 }
