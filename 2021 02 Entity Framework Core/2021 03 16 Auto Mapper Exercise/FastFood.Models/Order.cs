@@ -1,13 +1,19 @@
-using System;
-using FastFood.Models.Enums;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace FastFood.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    using Enums;
+
     public class Order
 	{
+        public Order()
+        {
+			this.OrderItems = new HashSet<OrderItem>();
+        }
+
 		public int Id { get; set; }
 
 		[Required]

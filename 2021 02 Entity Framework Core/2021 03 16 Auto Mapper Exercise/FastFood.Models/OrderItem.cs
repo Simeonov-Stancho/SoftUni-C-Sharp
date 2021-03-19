@@ -1,7 +1,7 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace FastFood.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class OrderItem
 	{
 		public int OrderId { get; set; }

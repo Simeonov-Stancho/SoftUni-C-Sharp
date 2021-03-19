@@ -1,8 +1,8 @@
-﻿using FastFood.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace FastFood.Data
+﻿namespace FastFood.Data
 {
+    using Microsoft.EntityFrameworkCore;
+    using Models;
+
     public class FastFoodContext : DbContext
     {
         public FastFoodContext()

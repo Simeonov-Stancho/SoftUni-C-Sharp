@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Web", "FastFood.Web\FastFood.Web.csproj", "{69BE55DE-ED28-41C3-80EE-B8F992C7C464}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFood.Data", "FastFood.Data\FastFood.Data.csproj", "{053243E1-9204-4B39-ACA3-7E4FA7C1C2FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Data", "FastFood.Data\FastFood.Data.csproj", "{053243E1-9204-4B39-ACA3-7E4FA7C1C2FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastFood.Models", "FastFood.Models\FastFood.Models.csproj", "{C6BCD549-980D-460D-AF9C-3775FF70F18A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Models", "FastFood.Models\FastFood.Models.csproj", "{C6BCD549-980D-460D-AF9C-3775FF70F18A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Core", "FastFood.Core\FastFood.Core.csproj", "{CE3AD243-2CF1-487C-B449-4D292CB0A793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{69BE55DE-ED28-41C3-80EE-B8F992C7C464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69BE55DE-ED28-41C3-80EE-B8F992C7C464}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69BE55DE-ED28-41C3-80EE-B8F992C7C464}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69BE55DE-ED28-41C3-80EE-B8F992C7C464}.Release|Any CPU.Build.0 = Release|Any CPU
 		{053243E1-9204-4B39-ACA3-7E4FA7C1C2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{053243E1-9204-4B39-ACA3-7E4FA7C1C2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{053243E1-9204-4B39-ACA3-7E4FA7C1C2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{C6BCD549-980D-460D-AF9C-3775FF70F18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6BCD549-980D-460D-AF9C-3775FF70F18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6BCD549-980D-460D-AF9C-3775FF70F18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3AD243-2CF1-487C-B449-4D292CB0A793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3AD243-2CF1-487C-B449-4D292CB0A793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3AD243-2CF1-487C-B449-4D292CB0A793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3AD243-2CF1-487C-B449-4D292CB0A793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
