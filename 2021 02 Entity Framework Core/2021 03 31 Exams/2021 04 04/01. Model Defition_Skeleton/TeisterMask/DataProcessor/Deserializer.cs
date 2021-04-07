@@ -131,7 +131,7 @@
 
             foreach (var employeeDto in employeesDto)
             {
-                //TODO be shure of valid UserName only letters& num
+                //TODO valid UserName only letters & num
                 //For now is with regex
 
                 if (!IsValid(employeeDto))
