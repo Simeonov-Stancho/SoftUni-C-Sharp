@@ -3,4 +3,4 @@ function echo(input){
     console.log(input);
 }
 
-echo('Hello JavaScript');
+echo('Hello, JavaScript!');
