@@ -1,9 +1,6 @@
-function convertToUppercase(words){
-let toUpper = '';
-    
-words.toString.replaceAll('!', 'jjj'); // $& means the whole matched string
-   
-    return toUpper;
+function convertToUppercase(words) {
+    return words.match(/\w+/g).join(", ").toLocaleUpperCase()
 }
 
 console.log(convertToUppercase('Hi, how! are you?'));
+console.log(convertToUppercase('Functions in JS can be nested, i.e. hold other functions'));
