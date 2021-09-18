@@ -1,6 +1,6 @@
 function solve(inputArr, number) {
     let output = [];
-for (let i = 0; i < inputArr.length; i+=number) {
+    for (let i = 0; i < inputArr.length; i+=number) {
         output.push(inputArr[i]);
     }
 
