@@ -7,11 +7,10 @@ function solve(inputArr) {
 
         if (currentComand == 'add') {
             outputArr.push(number);
-            number++;
         } else {
             outputArr.pop();
-            number++;
         }
+        number++;
     }
 
     if (outputArr.length == 0) {
