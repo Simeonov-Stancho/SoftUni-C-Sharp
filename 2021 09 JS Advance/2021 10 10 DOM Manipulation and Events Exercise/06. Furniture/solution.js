@@ -17,38 +17,30 @@ function solve() {
 
       const trField = document.createElement('tr');
 
-      const tdImg = document.createElement('td');
-      const img = document.createElement('img');
-      img.setAttribute('src', furniture.img);
-      tdImg.appendChild(img);
-      trField.appendChild(tdImg);
-
-      const tdName = document.createElement('td');
-      const pName = document.createElement('p');
-      pName.textContent = furniture.name;
-      tdName.appendChild(pName);
-      trField.appendChild(tdName);
-
-      const tdPrice = document.createElement('td');
-      const pPrice = document.createElement('p');
-      pPrice.textContent = furniture.price;
-      tdPrice.appendChild(pPrice);
-      trField.appendChild(tdPrice);
-
-      const tdDeFactor = document.createElement('td');
-      const pdecFactor = document.createElement('p');
-      pdecFactor.textContent = furniture.decFactor;
-      tdDeFactor.appendChild(pdecFactor);
-      trField.appendChild(tdDeFactor);
-
-      const tdBox = document.createElement('td');
-      const inputFiled = document.createElement('input');
-      inputFiled.type = 'checkbox';
-      tdBox.appendChild(inputFiled);
-      trField.appendChild(tdBox);
+      insertRow(trField, 'img', { src: furniture.img });
+      insertRow(trField, 'p', {}, furniture.name);
+      insertRow(trField, 'p', {}, furniture.price);
+      insertRow(trField, 'p', {}, furniture.decFactor);
+      insertRow(trField, 'input', { type: 'checkbox' });
 
       table.appendChild(trField);
     }
+  }
+
+  function insertRow(trField, tag, atributes, content) {
+    const tdTag = document.createElement('td');
+    const cellTag = document.createElement(tag);
+
+    for (const atrubute in atributes) {
+      cellTag[atrubute] = atributes[atrubute]
+    }
+
+    if (content) {
+      cellTag.textContent = content;
+    }
+
+    tdTag.appendChild(cellTag);
+    trField.appendChild(tdTag);
   }
 
   function buyFurniture() {
@@ -68,7 +60,7 @@ function solve() {
 
     outputArray.textContent += `Bought furniture: ${boughtFurnitures.join(', ')}\n`;
     outputArray.textContent += `Total price: ${totalPrice.toFixed(2)}\n`;
-    outputArray.textContent += `Average decoration factor: ${totalDecFactor/boughtFurnitures.length}`;
+    outputArray.textContent += `Average decoration factor: ${totalDecFactor / boughtFurnitures.length}`;
   }
 }
 
