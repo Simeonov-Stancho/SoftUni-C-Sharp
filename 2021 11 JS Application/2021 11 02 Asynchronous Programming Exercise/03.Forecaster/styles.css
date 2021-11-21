@@ -17,6 +17,12 @@ div.forecast-info {
     margin-bottom: 1%;
 }
 
+div.missingData {
+    border: 1px solid aquamarine;
+    border-radius: 4px;
+    margin-bottom: 1%;
+}
+
 #request {
     text-align: center;
 }
