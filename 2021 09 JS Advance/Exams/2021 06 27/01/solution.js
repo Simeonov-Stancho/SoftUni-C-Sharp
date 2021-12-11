@@ -19,6 +19,7 @@ function solution() {
 
   let divBlock = document.getElementById('block')
 
+  //with obj
   let reservation = {
     fullName,
     email,
@@ -27,6 +28,7 @@ function solution() {
     code,
   };
 
+  //with array
   let info = []
 
   function submitReservation(event) {
@@ -36,16 +38,18 @@ function solution() {
       return;
     }
 
+    //if use obj
     reservation = {
       fullName: fullName.value,
       email: email.value,
       phone: phone.value,
       address: address.value,
-      code:code.value,
+      code: code.value,
     };
 
-    info.push(fullName.value,email.value, phone.value, address.value, code.value)
-    
+    //if use array
+    info.push(fullName.value, email.value, phone.value, address.value, code.value)
+
     submitBtn.disabled = true;
     editBtn.disabled = false;
     continueBtn.disabled = false;
@@ -68,23 +72,26 @@ function solution() {
     editBtn.disabled = true;
     continueBtn.disabled = true;
 
+    //with split, but missing ': ' in fields
     // fullName.value = previewEl.children[0].textContent.split(': ')[1];
     // email.value = previewEl.children[1].textContent.split(': ')[1];
     // phone.value = previewEl.children[2].textContent.split(': ')[1];
     // address.value = previewEl.children[3].textContent.split(': ')[1];
     // code.value = previewEl.children[4].textContent.split(': ')[1];
 
-    // fullName.value = reservation.fullName;
-    // email.value = reservation.email;
-    // phone.value = reservation.phone;
-    // address.value = reservation.address;
-    // code.value = reservation.code;
+    //if you prefer to work with obj
+    fullName.value = reservation.fullName;
+    email.value = reservation.email;
+    phone.value = reservation.phone;
+    address.value = reservation.address;
+    code.value = reservation.code;
 
-    fullName.value = info[0];
-    email.value = info[1];
-    phone.value = info[2];
-    address.value = info[3];
-    code.value = info[4];
+    //if you prefer to work with array uncoment tnis
+    // fullName.value = info[0];
+    // email.value = info[1];
+    // phone.value = info[2];
+    // address.value = info[3];
+    // code.value = info[4];
 
     previewEl.innerHTML = '';
   }

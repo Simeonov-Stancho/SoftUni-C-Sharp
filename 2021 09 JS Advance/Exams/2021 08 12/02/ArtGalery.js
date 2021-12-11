@@ -15,7 +15,7 @@ class ArtGallery {
         let articleModelToLowerCase = articleModel.toLowerCase();
         const isValidArticModel = Object.entries(this.possibleArticles).some(a => a[0] == articleModelToLowerCase);
         const currentArticle = this.listOfArticles.find(a => a.articleName == articleName);
-        if (!isValidArticModel) {
+        if (!this.possibleArticles.hasOwnProperty(articleModelToLowerCase)) {
             throw new Error('This article model is not included in this gallery!');
         };
 

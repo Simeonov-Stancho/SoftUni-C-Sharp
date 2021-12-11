@@ -39,8 +39,27 @@ function solve() {
         addBtn.value = '';
 
         likeBtn.addEventListener('click', likeSong);
+        // likeBtn.addEventListener('click', () => {
+        //     totalLikes += 1;
+        //     likeBtn.disabled = true;
+        //     let likesCounter = document.querySelector('#total-likes p');
+        //     likesCounter.textContent = `Total Likes: ${totalLikes}`;
+        // });
+
+
+
         saveBtn.addEventListener('click', saveSong);
+        // saveBtn.addEventListener('click', () => {
+        //     const divSavedHit = document.querySelector('.saved-container');
+        //     divSavedHit.appendChild(div);
+        //     saveBtn.remove();
+        //     likeBtn.remove();
+        // });
+
         deleteBtn.addEventListener('click', deleteSong);
+        // deleteBtn.addEventListener('click', () => {
+        //     div.remove();
+        // });
     }
 
     function likeSong(event) {

@@ -21,29 +21,23 @@ function solve() {
       let deleteBtn = articleEl.querySelectorAll('button')[0];
       let archiveBtn = articleEl.querySelectorAll('button')[1];
 
-      deleteBtn.addEventListener('click', deleteContent);
-      archiveBtn.addEventListener('click', archiveContent);
+      deleteBtn.addEventListener('click', () => {
+         sectionEl.removeChild(articleEl);
+      });
+      archiveBtn.addEventListener('click', () => {
+         let liEl = document.createElement('li');
+         liEl.textContent = articleEl.children[0].textContent
+         olEl.appendChild(liEl);
+         sectionEl.removeChild(articleEl);
+
+         Array.from(olEl.children)
+            .sort((a, b) => a.textContent.localeCompare(b.textContent.toLowerCase()))
+            .forEach(element => olEl.appendChild(element));
+      });
 
       author.value = '';
       title.value = '';
       category.value = '';
       content.value = '';
-   }
-
-   function deleteContent(ev) {
-      let currentArticleEl = ev.target.parentElement.parentElement;
-            currentArticleEl.remove();
-   }
-
-   function archiveContent(e) {
-      let currentArticleEl = e.currentTarget.parentElement.parentElement;
-      let liEl = document.createElement('li');
-      liEl.textContent = currentArticleEl.firstElementChild.textContent
-      olEl.appendChild(liEl);
-      currentArticleEl.remove();
-
-      Array.from(olEl.children)
-      .sort((a,b) =>  a.textContent.localeCompare(b.textContent.toLowerCase()))
-      .forEach(element => olEl.appendChild(element));
-   }
+   } 
 }
